@@ -8,7 +8,7 @@ pipeline {
 		stage('Clone'){
 			steps {git url:'https://github.com/josmyrose-03/eureka-service.git', branch:'master'}			}
 		stage('Build'){
-			steps {sh "mvn clean package -DskipTests"}
+			steps {sh "mvn clean install"}
 		}
 		stage('Pre_deploy'){
 			steps{sh "docker rm -f eureka-cntr"
